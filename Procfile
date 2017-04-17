@@ -1,0 +1,1 @@
+web:    java -jar target/PspPrograma6.jar

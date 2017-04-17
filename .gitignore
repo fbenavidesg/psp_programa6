@@ -1,0 +1,8 @@
+target
+.env
+.idea
+.iml
+nbproject
+.settings
+.project
+.classpath
