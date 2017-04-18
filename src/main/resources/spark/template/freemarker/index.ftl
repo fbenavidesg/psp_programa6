@@ -16,7 +16,7 @@
     }
 </style>
 <body>
-    <h2>Regla Simpson</h2>
+    <h2>Busqueda de f(x) con Regla Simpson</h2>
     <table>
     	<tr>
                 <th>p</th>

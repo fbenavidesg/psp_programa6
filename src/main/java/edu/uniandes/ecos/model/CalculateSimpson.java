@@ -9,7 +9,12 @@ public class CalculateSimpson {
     private double integral1;
     private double integral2;
     
-    
+    /**
+     * realiza la busqueda de f(x) de acuerdo con la comparación de resultado esperado y el calculado
+     * @param dof
+     * @param resultExpected
+     * @return 
+     */
     public double calculateX( double dof, double resultExpected){
         double x = 1;
         double xMin = 0;
@@ -17,11 +22,7 @@ public class CalculateSimpson {
         double aux = 0;
         double resultSimpson;
         do{
-            /*System.out.println( "x es:"+ x );*/
             resultSimpson = calculate( x, dof );
-            /*System.out.println( "resultado esperado:"+ resultExpected );
-            System.out.println( "resultado es:"+ resultSimpson );
-            System.out.println( "diferencia :" +(resultExpected - resultSimpson) );*/
             if( resultExpected - resultSimpson < 0 ){
                 xSup = x;
                 x = x - ((xSup - xMin) / 2);
@@ -33,10 +34,6 @@ public class CalculateSimpson {
                     x = x + ((xSup - xMin) / 2);
                 }
             }
-            /*System.out.println( "xMin es:"+ xMin );
-            System.out.println( "xSup es:"+ xSup );
-            System.out.println( "Diferencia:" + (Math.abs(resultExpected - resultSimpson) < this.E) );
-            System.out.println( "---");*/
         }while( !(Math.abs(resultExpected - resultSimpson) < this.E) );
         return x;
     }
