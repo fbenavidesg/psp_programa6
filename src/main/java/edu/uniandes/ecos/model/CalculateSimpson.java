@@ -9,6 +9,38 @@ public class CalculateSimpson {
     private double integral1;
     private double integral2;
     
+    
+    public double calculateX( double dof, double resultExpected){
+        double x = 1;
+        double xMin = 0;
+        double xSup = 0;
+        double aux = 0;
+        double resultSimpson;
+        do{
+            /*System.out.println( "x es:"+ x );*/
+            resultSimpson = calculate( x, dof );
+            /*System.out.println( "resultado esperado:"+ resultExpected );
+            System.out.println( "resultado es:"+ resultSimpson );
+            System.out.println( "diferencia :" +(resultExpected - resultSimpson) );*/
+            if( resultExpected - resultSimpson < 0 ){
+                xSup = x;
+                x = x - ((xSup - xMin) / 2);
+            }else{
+                xMin = x;
+                if( xSup == 0 ){
+                    x = x + ((xMin*2 - xMin) / 2); 
+                }else{
+                    x = x + ((xSup - xMin) / 2);
+                }
+            }
+            /*System.out.println( "xMin es:"+ xMin );
+            System.out.println( "xSup es:"+ xSup );
+            System.out.println( "Diferencia:" + (Math.abs(resultExpected - resultSimpson) < this.E) );
+            System.out.println( "---");*/
+        }while( !(Math.abs(resultExpected - resultSimpson) < this.E) );
+        return x;
+    }
+    
     /**
      * metodo principal orquesta el calculo
      * @param x double valor ingresado por el usuario correspondiente a f(x)

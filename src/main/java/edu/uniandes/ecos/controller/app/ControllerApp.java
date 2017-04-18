@@ -14,13 +14,14 @@ public class ControllerApp {
 	 * @return
 	 */
 	public ResultSimpson execute( double getX, double getDof, double resultExpected  ){
-        ResultSimpson resultSimpson = new ResultSimpson();
+                ResultSimpson resultSimpson = new ResultSimpson();
 		CalculateSimpson calculateSimpson = new CalculateSimpson();
-		double result = calculateSimpson.calculate(getX, getDof);
-		resultSimpson.setX(getX);
+                double calculateX = calculateSimpson.calculateX( getDof, resultExpected );
+                
+                resultSimpson.setX(getX);
                 resultSimpson.setDof(getDof);
                 resultSimpson.setResultExpected(resultExpected);
-                resultSimpson.setResult(result);
+                resultSimpson.setResult(calculateX);
 		return resultSimpson;
 	}
 }
