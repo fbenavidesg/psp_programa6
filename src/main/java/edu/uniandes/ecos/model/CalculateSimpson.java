@@ -10,7 +10,7 @@ public class CalculateSimpson {
     private double integral2;
     
     /**
-     * realiza la busqueda de f(x) de acuerdo con la comparación de resultado esperado y el calculado
+     * realiza la busqueda de f(x) de acuerdo con la comparacion de resultado esperado y el calculado
      * @param dof
      * @param resultExpected
      * @return 
