@@ -19,15 +19,15 @@
     <h2>Regla Simpson</h2>
     <table>
     	<tr>
-    		<th>f(x)</th>
+                <th>p</th>
     		<th>dof</th>
-    		<th>Resultado Esperado</th>
-    		<th>Resultado Calculado</th>
+    		<th>f(x) Esperado</th>
+    		<th>f(x) Calculado</th>
     	</tr>
-    	<tr>
+    	<tr>    
+                <td>${resultSimpson.getResultExpected()?string("####.##########")}</td>
+                <td>${resultSimpson.getDof()}</td>
     		<td>${resultSimpson.getX()}</td>
-    		<td>${resultSimpson.getDof()}</td>
-    		<td>${resultSimpson.getResultExpected()?string("####.##########")}</td>
     		<td>${resultSimpson.getResult()?string("####.##########")}</td>
     	</tr>
     </table>
